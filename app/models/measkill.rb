@@ -1,0 +1,3 @@
+class Measkill < ApplicationRecord
+  
+end

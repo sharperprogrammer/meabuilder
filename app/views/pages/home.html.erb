@@ -1,1 +1,55 @@
 <h1 align="center">Testing Rails 5.1.4</h1>
+<div align="center">
+
+  <div class="meaimage">
+  </div>
+  
+<div class="measkills-links">
+  <%= link_to "Skills that boost Melee Dmg", root_path(:skillfilter => "increase-melee-atk") %> |
+  <%= link_to "Boost Shield Damage", root_path(:skillfilter => "boost-shield-dmg") %> |
+  <%= link_to "Boost Armor Damage", root_path(:skillfilter => "boost-armor-dmg") %>
+</div>
+  
+  <table>
+    <tr>
+      <th>Combat</th>
+      <th>Biotics</th>
+      <th>Tech</th>
+    </tr>
+    <% @measkills.each do |measkill| %>
+      <% if measkill.category == "Combat" %>
+      <tr>
+        <td>
+          <% if @selectedskills.include?(measkill) %>
+          <strong>
+          <% end %>
+            <%= measkill.name %>
+          <% if @selectedskills.include?(measkill) %>
+          </strong>
+          <% end %>
+        </td>
+      <% elsif measkill.category == "Biotics" %>
+        <td>
+          <% if @selectedskills.include?(measkill) %>
+          <strong>
+          <% end %>
+            <%= measkill.name %>
+          <% if @selectedskills.include?(measkill) %>
+          </strong>
+          <% end %>
+        </td>
+      <% else %>
+        <td>
+          <% if @selectedskills.include?(measkill) %>
+          <strong>
+          <% end %>
+            <%= measkill.name %>
+          <% if @selectedskills.include?(measkill) %>
+          </strong>
+          <% end %>
+        </td>
+      </tr>
+      <% end %>
+    <% end %>
+  </table>
+</div>
